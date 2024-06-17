@@ -1,0 +1,108 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #f8f8f8; 
+}
+
+.list {
+    position: relative;
+    background: #2e7d32; 
+    width: 400px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    padding: 20px;
+}
+
+.list h2 {
+    color: white; 
+    padding: 10px 0;
+    font-weight: 600;
+    text-align: center;
+    font-size: 1.5em; 
+}
+
+.list ul {
+    padding: 20px;
+}
+
+.list ul li {
+    list-style: none;
+    padding: 15px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    transition: background 0.3s;
+}
+
+.list ul li:last-child {
+    border-bottom: none;
+}
+
+.list ul li:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.list ul li label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    font-size: 1.2em; 
+    color: white; 
+}
+
+.list ul li label input {
+    visibility: hidden;
+    appearance: none;
+}
+
+.list ul li label p {
+    margin-left: 20px;
+    transition: color 0.3s, text-decoration 0.3s;
+}
+
+.list ul li label span {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    border: 1px solid white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background 0.3s, border 0.3s;
+}
+
+.list ul li label span::before {
+    content: '';
+    position: absolute;
+    top: 5px;
+    width: 10px;
+    height: 5px;
+    border-left: 2px solid white;
+    border-bottom: 2px solid white;
+    transform: rotate(-40deg);
+}
+
+.list ul li label input:checked ~ p {
+    text-decoration: line-through;
+    color: #ccc;
+}
+
+.list ul li label input:checked ~ span {
+    background: white;
+    border: 1px solid white;
+}
+
+.list ul li label input:checked ~ span::before {
+    border-left: 2px solid #2e7d32;
+    border-bottom: 2px solid #2e7d32;
+}
